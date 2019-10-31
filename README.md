@@ -17,3 +17,5 @@ If you would like to interactively create instances of the `Player`, `Quarterbac
 
 _Originally created by Joanne Jordan for Lambda School's Data Science program_
 https://github.com/jojordan3/LSDS-OOP-assignment
+
+*Review material*
