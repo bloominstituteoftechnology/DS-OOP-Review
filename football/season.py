@@ -1,36 +1,35 @@
 '''Tracks the season perfomance of different teams and generates a
 '''
-from possible_values import *
+
+from teams import team_names, locations, weeks
 from game import Game
 from random import randint, uniform, sample
 
 
 def generate_rand_games(n=15):
-    '''Generate n random games using value lists in possible_values
+    '''Generate n random games using value lists in teams
     '''
-    # Begin with enpty list
+    # Begin with empty list
     games = []
 
     # For the specified number of games, create an instance of the Game
     # class...
-    # TODO - You can also include the location and week number if desired
+
     for _ in list(range(n)):
         # Get team names by sampling team_names from possible_values
-        game = Game(teams=sample(team_names, k=2))
+        game = Game(teams=sample(team_names, k=2), location=sample(locations, k=1), week=sample(weeks, k=1))
 
         # Give each team a random number (from 0 to 3) of each:
         # touchdowns and field goals
         for i in list(range(randint(0, 4))):
             game.field_goal(game.teams[0])
+            game.touchdown(game.teams[0])
+            game.safety(game.teams[0])
 
         for j in list(range(randint(0, 4))):
             game.field_goal(game.teams[1])
-
-        for k in list(range(randint(0, 4))):
-            game.touchdown(game.teams[0])
-
-        for l in list(range(randint(0, 4))):
             game.touchdown(game.teams[1])
+            game.safety(game.teams[1])
 
         games.append(game)
     return games
