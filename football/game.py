@@ -51,7 +51,7 @@ class Game:
             self.score[team] += (6 + extra_point)
 
     def field_goal(self, team):
-        '''record td for a team
+        '''record fg for a team
         Parameters
         -----------------------------
         team : str
@@ -62,8 +62,18 @@ class Game:
         else:
             self.score[team] += 3
 
-    def safety(self, TODO):
-        pass  # TODO (a safety is worth 2 points)
+    def safety(self, team):
+        '''record safety for a team
+        Parameters
+        -----------------------------
+        team : str
+            team that scored
+        '''
+        if team not in self.teams:
+            raise ValueError('team parameter must be in self.teams')
+        else:
+            self.score[team] += 2
+
 
     def get_winning_team(self):
         '''When game is done, this can be run to add attributes
@@ -74,9 +84,16 @@ class Game:
         if self.score[self.teams[1]] == self.score[self.teams[0]]:
             self.touchdown(self.teams[0])
 
+        # Sporting 1
+        # Benfica 3
         v = list(self.score.values())
         k = list(self.score.keys())
+
         self.winning_team_ = k[v.index(max(v))]
+        # max(v)=3 min(v)=1 
+        # v.index(3) = 1  v.index(1) = 0
+        # k[1]=Benfica   k[0]=Sporting
+
         self.losing_team_ = k[v.index(min(v))]
 
         return self.winning_team_, self.losing_team_

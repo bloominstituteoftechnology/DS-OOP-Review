@@ -1,7 +1,8 @@
 import unittest
 from players import Player, Quarterback
-from possible_values import *
+from teams import *
 from game import Game
+
 # TODO - some things you can add...
 
 # import the `season` file and make sure generate_random_games only
@@ -13,11 +14,27 @@ from game import Game
 class FootballGameTest(unittest.TestCase):
     '''test the class'''
     def test_field_goal_made(self):
-        pass  # TODO
+        game1=Game(teams=[team_names[0],team_names[1]], location=locations[0],score=0, week=weeks[4])
+        self.assertEqual(game1.score[team_names[0]], 0)
+        self.assertEqual(game1.score[team_names[1]], 0)
+
+        game1.field_goal(team_names[0])
+        self.assertEqual(game1.score[team_names[0]], 3)
+        self.assertEqual(game1.score[team_names[1]], 0)
+      
+        game1.field_goal(team_names[0])
+        self.assertEqual(game1.score[team_names[0]], 6)
+        self.assertEqual(game1.score[team_names[1]], 0)
 
     def test_get_winnerr(self):
-        pass  # TODO
+        game2=Game(teams=[team_names[0],team_names[1]], location=locations[0],score=0, week=weeks[4])
+        game2.touchdown(team_names[0], 0)
+        game2.get_winning_team()
+        self.assertEqual(game2.winning_team_, team_names[0])
 
+        game2.touchdown(team_names[1])
+        game2.get_winning_team()
+        self.assertEqual(game2.losing_team_, team_names[0])
 
 class FootballPlayerTest(unittest.TestCase):
     '''Check the default values for Player and Quarterback
