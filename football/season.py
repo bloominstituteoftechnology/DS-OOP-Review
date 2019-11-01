@@ -14,7 +14,7 @@ def generate_rand_games(n=15):
 
     # For the specified number of games, create an instance of the Game
     # class...
-    
+
     for _ in list(range(n)):
         # Get team names by sampling team_names from possible_values
         game = Game(teams=sample(team_names, k=2), location=sample(locations, k=1), week=sample(weeks, k=1))

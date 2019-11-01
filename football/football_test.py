@@ -1,7 +1,7 @@
 import unittest
 from players import Player, Quarterback
-from teams import *
 from game import Game
+from teams import * 
 
 # TODO - some things you can add...
 
