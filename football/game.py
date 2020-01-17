@@ -51,7 +51,7 @@ class Game:
             self.score[team] += (6 + extra_point)
 
     def field_goal(self, team):
-        '''record td for a team
+        '''record field goal for a team
         Parameters
         -----------------------------
         team : str
