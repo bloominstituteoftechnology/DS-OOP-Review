@@ -19,11 +19,10 @@ class Player:
     def get_points(self):
         '''Gets points scored by the player from stats
         '''
-        td_points = 6 * self.stats['td']
-        safety_points = 2 * self.stats['safety']
+        td_points = 6 * self.touchdowns
+        safety_points = 2 * self.safety
         total_points = td_points + safety_points
         return total_points
-
 
 class Quarterback(Player):
     '''Override certain parameters of the default Player class and add some

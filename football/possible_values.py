@@ -1,4 +1,4 @@
 team_names = ['LA Chargers', 'LA Rams', 'NE Patriots', 'NY Giants',
               'Chicago Bears']
-# TODO
-# Add possible locations and weeks in the season
+
+location = ['Los Angeles', 'New England', 'New York', 'Chicago']
