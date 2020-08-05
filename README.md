@@ -1,4 +1,4 @@
-# LSDS Object Oriented Programming Review Assignment
+# Sam's copy of the LSDS Object Oriented Programming Review Assignment
 
 Inside the `football` directory, you will find several files, including a blank `__init__.py`. Don't worry about that one right now. These files together can model several aspects of a football season including a player's statistics, an individual football game, and a season.
 
