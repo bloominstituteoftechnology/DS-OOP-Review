@@ -2,21 +2,20 @@ import unittest
 from players import Player, Quarterback
 from possible_values import *
 from game import Game
-# TODO - some things you can add...
-
-# import the `season` file and make sure generate_random_games only
-# makes games with appropriate team names (and never has a team playing itself)
-
-# Complete the FootballGameTest
+from season import generate_rand_games
 
 
 class FootballGameTest(unittest.TestCase):
     '''test the class'''
     def test_field_goal_made(self):
-        pass  # TODO
+        game = Game([team_names[0], team_names[1]])
+        game.field_goal(game.teams[0])
+        self.assertEqual(game.score, {game.teams[0]: 3, game.teams[1]: 0})
 
     def test_get_winnerr(self):
-        pass  # TODO
+        game = Game([team_names[0], team_names[1]], score={team_names[0]: 1, team_names[1]: 0})
+        game.get_winning_team()
+        self.assertEqual(game.winning_team_, game.teams[0])
 
 
 class FootballPlayerTest(unittest.TestCase):
