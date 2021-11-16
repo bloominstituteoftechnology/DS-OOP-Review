@@ -15,5 +15,5 @@ If you would like to run the tests or generate a season report, run `python file
 If you would like to interactively create instances of the `Player`, `Quarterback`, `Game`, or your own, added, classes and run different methods on them, run `python` or `python3` in terminal and `import` the appropriate module (file name without the `.py`) on the python shell (when you see `>>>`, for example).
 
 
-_Originally created by Joanne Jordan for Lambda School's Data Science program_
+_Originally created by Joanne Jordan for BloomTech's Data Science program_
 https://github.com/jojordan3/LSDS-OOP-assignment
